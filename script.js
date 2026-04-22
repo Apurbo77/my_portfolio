@@ -66,8 +66,17 @@ if (contactForm) {
         submitBtn.innerText = 'Sending...';
         submitBtn.style.opacity = '0.7';
         
-        // Simulate form submission
-        setTimeout(() => {
+        const formData = new FormData(this);
+        
+        fetch("https://formsubmit.co/ajax/apurbobhaket17@gmail.com", {
+            method: "POST",
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
             submitBtn.innerText = 'Message Sent!';
             submitBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
             submitBtn.style.opacity = '1';
@@ -77,6 +86,17 @@ if (contactForm) {
                 submitBtn.innerText = originalText;
                 submitBtn.style.background = '';
             }, 3000);
-        }, 1500);
+        })
+        .catch(error => {
+            console.error(error);
+            submitBtn.innerText = 'Error! Try Again.';
+            submitBtn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
+            submitBtn.style.opacity = '1';
+            
+            setTimeout(() => {
+                submitBtn.innerText = originalText;
+                submitBtn.style.background = '';
+            }, 3000);
+        });
     });
 }
