@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apurbo's Personal Portfolio">
+    <title>Apurbo | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="blob-bg"></div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Apurbo<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <p class="greeting">Hi, I am</p>
+                <h1 class="glitch" data-text="Apurbo">Apurbo</h1>
+                <h2 class="subtitle">Crafting Digital Experiences</h2>
+                <p class="description">I build beautiful, responsive, and highly functional web applications. Passionate about turning complex problems into simple, elegant solutions.</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn primary-btn">View My Work</a>
+                    <a href="#contact" class="btn secondary-btn">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <div class="profile-glow"></div>
+                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Creative Workspace" class="hero-img">
+            </div>
+        </section>
+
+        <section id="about" class="about reveal">
+            <div class="section-header">
+                <h2>About Me</h2>
+                <div class="line"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hello! I'm Apurbo, a software developer passionate about creating engaging and intuitive user experiences. I thrive on challenges and enjoy working across the entire stack to bring ideas to life.</p>
+                    <p>Whether it's building robust backends or pixel-perfect frontends, my goal is always to deliver high-quality, performant software.</p>
+                </div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Client Satisfaction</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills reveal">
+            <div class="section-header">
+                <h2>My Skills</h2>
+                <div class="line"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">✨</div>
+                    <h3>Frontend Development</h3>
+                    <p>HTML5, CSS3, JavaScript, React, Vue. Building responsive and dynamic user interfaces.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">⚙️</div>
+                    <h3>Backend Development</h3>
+                    <p>Node.js, Laravel, Python. Creating scalable and secure server-side applications.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🎨</div>
+                    <h3>UI/UX Design</h3>
+                    <p>Figma, Adobe XD. Designing intuitive and aesthetically pleasing digital products.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects reveal">
+            <div class="section-header">
+                <h2>Featured Projects</h2>
+                <div class="line"></div>
+            </div>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Project 1">
+                    </div>
+                    <div class="project-info">
+                        <h3>E-Commerce Platform</h3>
+                        <p>A full-stack e-commerce solution with real-time inventory management and secure payment processing.</p>
+                        <div class="tech-stack">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                        <a href="#" class="project-link">View Live &rarr;</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Project 2">
+                    </div>
+                    <div class="project-info">
+                        <h3>Analytics Dashboard</h3>
+                        <p>Interactive dashboard for visualizing complex datasets with customizable widgets and reporting.</p>
+                        <div class="tech-stack">
+                            <span>Vue.js</span>
+                            <span>D3.js</span>
+                            <span>Laravel</span>
+                        </div>
+                        <a href="#" class="project-link">View Live &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact reveal">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <div class="line"></div>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Let's build something awesome together!</h3>
+                    <p>I'm currently available for freelance work and open to new opportunities. Feel free to reach out if you have a project in mind or just want to say hi.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-btn">GitHub</a>
+                        <a href="#" class="social-btn">LinkedIn</a>
+                        <a href="#" class="social-btn">Twitter</a>
+                    </div>
+                </div>
+                <form class="contact-form" onsubmit="event.preventDefault();">
+                    <div class="input-group">
+                        <input type="text" id="name" required placeholder=" ">
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email" required placeholder=" ">
+                        <label for="email">Your Email</label>
+                    </div>
+                    <div class="input-group">
+                        <textarea id="message" required placeholder=" " rows="5"></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Apurbo. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
