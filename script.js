@@ -68,7 +68,7 @@ if (contactForm) {
 
         const formData = new FormData(this);
 
-        fetch("https://formsubmit.co/ajax/apurbobhaket@gmail.com", {
+        fetch("https://formsubmit.co/ajax/apurbobhaket17@gmail.com", {
             method: "POST",
             body: formData,
             headers: {
