@@ -4,10 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Apurbo's Personal Portfolio">
+    <meta name="description" content="Apurbo Kumar Bhaket — CSE Student at BRAC University. Portfolio showcasing skills, education, and academic achievements.">
+    <meta name="author" content="Apurbo Kumar Bhaket">
+    <meta name="theme-color" content="#050505">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Apurbo | Portfolio">
+    <meta property="og:description" content="CSE Student at BRAC University — skills, education & achievements.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="img1.jpg">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Apurbo | Portfolio">
+    <meta name="twitter:description" content="CSE Student at BRAC University — skills, education & achievements.">
     <title>Apurbo | Portfolio</title>
+    <!-- Preconnect & font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500&display=swap">
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500&display=swap"
         rel="stylesheet">
@@ -19,7 +33,7 @@
 
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">Apurbo</span></a>
+            <a href="index.html" class="logo">Apurbo</a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#education">Education</a></li>
@@ -51,7 +65,7 @@
                 <div class="profile-glow"></div>
                 <div class="circle-frame">
                     <div class="circle-ring"></div>
-                    <img src="img1.jpg" alt="Apurbo Kumar Bhaket" class="hero-img">
+                    <img src="img1.jpg" alt="Apurbo Kumar Bhaket" class="hero-img" fetchpriority="high" decoding="async">
                     <span class="orbit-dot orbit-dot--1"></span>
                     <span class="orbit-dot orbit-dot--2"></span>
                     <span class="orbit-dot orbit-dot--3"></span>
@@ -163,7 +177,7 @@
                             Bangladesh</span>
                     </div>
                 </div>
-                <form class="contact-form" onsubmit="event.preventDefault();">
+                <form class="contact-form" id="contact-form" novalidate>
                     <div class="input-group">
                         <input type="text" id="name" name="name" required placeholder=" ">
                         <label for="name">Your Name</label>
@@ -186,7 +200,7 @@
         <p>&copy; 2026 Apurbo. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 
 </html>

@@ -1,27 +1,27 @@
+document.addEventListener('DOMContentLoaded', () => {
+
 // Mobile Navigation Toggle
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const navLinks = document.querySelector('.nav-links');
 
-mobileMenuBtn.addEventListener('click', () => {
-    mobileMenuBtn.classList.toggle('active');
-    navLinks.classList.toggle('active');
+if (mobileMenuBtn && navLinks) {
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenuBtn.classList.toggle('active');
+        navLinks.classList.toggle('active');
 
-    // Prevent scrolling when menu is open
-    if (navLinks.classList.contains('active')) {
-        document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = 'auto';
-    }
-});
-
-// Close mobile menu when a link is clicked
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenuBtn.classList.remove('active');
-        navLinks.classList.remove('active');
-        document.body.style.overflow = 'auto';
+        // Prevent scrolling when menu is open
+        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
     });
-});
+
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenuBtn.classList.remove('active');
+            navLinks.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    });
+}
 
 // Sticky Navbar Background
 const navbar = document.querySelector('.navbar');
@@ -56,7 +56,7 @@ window.addEventListener('scroll', reveal);
 reveal();
 
 // Form submission handler
-const contactForm = document.querySelector('.contact-form');
+const contactForm = document.querySelector('#contact-form, .contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
@@ -100,3 +100,5 @@ if (contactForm) {
             });
     });
 }
+
+}); // end DOMContentLoaded
