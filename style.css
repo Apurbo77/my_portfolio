@@ -285,7 +285,9 @@ main {
 }
 
 @keyframes spin-arc {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .hero-img {
@@ -315,12 +317,15 @@ main {
 }
 
 @keyframes pulse-glow {
-    0%, 100% {
+
+    0%,
+    100% {
         box-shadow:
             0 0 0 6px rgba(99, 102, 241, 0.08),
             0 0 35px rgba(99, 102, 241, 0.35),
             0 20px 55px rgba(0, 0, 0, 0.55);
     }
+
     50% {
         box-shadow:
             0 0 0 10px rgba(168, 85, 247, 0.12),
@@ -334,7 +339,7 @@ main {
     position: absolute;
     width: 360px;
     height: 360px;
-    background: radial-gradient(circle, rgba(99,102,241,0.4) 0%, rgba(168,85,247,0.2) 50%, transparent 75%);
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.4) 0%, rgba(168, 85, 247, 0.2) 50%, transparent 75%);
     filter: blur(50px);
     opacity: 0.9;
     border-radius: 50%;
@@ -343,9 +348,17 @@ main {
 }
 
 @keyframes float {
-    0%   { transform: translateY(0px); }
-    50%  { transform: translateY(-18px); }
-    100% { transform: translateY(0px); }
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-18px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 /* Sections Common */
