@@ -262,18 +262,28 @@
 
         /* Responsive */
         @media (max-width: 600px) {
+            body {
+                padding-top: 0.5rem;
+            }
+
             .cv-container {
-                margin: 1rem;
-                padding: 0.3in 0.25in;
+                margin: 0.5rem;
+                padding: 1.2rem 1rem;
+                border-radius: 6px;
             }
 
             .cv-header h1 {
-                font-size: 18pt;
+                font-size: 1.5rem;
+            }
+            
+            .cv-header .subtitle {
+                font-size: 1rem;
             }
 
             .contact-bar {
                 flex-direction: column;
-                gap: 2pt;
+                align-items: center;
+                gap: 5px;
             }
 
             .contact-bar .separator {
@@ -282,6 +292,21 @@
 
             .entry-header {
                 flex-direction: column;
+                align-items: flex-start;
+                gap: 3px;
+            }
+
+            .print-btn,
+            .back-btn {
+                position: static;
+                display: flex;
+                justify-content: center;
+                margin: 0.5rem auto;
+                width: calc(100% - 1rem);
+            }
+            
+            ul {
+                margin-left: 1rem !important;
             }
         }
     </style>
@@ -368,19 +393,36 @@
             </div>
         </section>
 
+        <!-- Projects -->
+        <section class="cv-section">
+            <h2 class="cv-section-title">Projects</h2>
+            
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Bytelearn (Full-Stack Learning Management System)</span>
+                </div>
+                <ul style="margin-left: 1.2rem; font-size: 10pt; color: #333; margin-top: 4pt;">
+                    <li style="margin-bottom: 4pt;">Architected and built a modern LMS using Laravel 12 and React (TypeScript), bridging a robust API backend with a dynamic, SPA-like frontend.</li>
+                    <li style="margin-bottom: 4pt;">Implemented a real-time, streaming AI chat assistant directly into the interactive video player (Plyr) using Server-Sent Events (SSE) to provide instant tutoring.</li>
+                    <li style="margin-bottom: 4pt;">Designed secure Role-Based Access Control (RBAC) flows for instructors (course creation, analytics) and students (enrollment, progress tracking, interactive discussions).</li>
+                    <li style="margin-bottom: 4pt;">Engineered an automated backend service utilizing Laravel-DOMPDF to dynamically generate, track, and distribute personalized PDF certificates upon course completion.</li>
+                </ul>
+            </div>
+        </section>
+
         <!-- Skills -->
         <section class="cv-section">
             <h2 class="cv-section-title">Skills</h2>
 
             <div class="skills-category">
                 <h3>Technical Skills</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag highlighted">Python</span>
-                    <span class="skill-tag highlighted">C Language</span>
-                    <span class="skill-tag highlighted">Laravel Framework</span>
-                    <span class="skill-tag">MS Word</span>
-                    <span class="skill-tag">PowerPoint</span>
-                </div>
+                <ul style="margin-left: 1.2rem; font-size: 10pt; color: #333;">
+                    <li style="margin-bottom: 4pt;"><strong style="color: #1a1a1a;">Languages:</strong> JavaScript (ES6+), TypeScript, Python, PHP, HTML5, C/C++</li>
+                    <li style="margin-bottom: 4pt;"><strong style="color: #1a1a1a;">Web Technologies:</strong> React 18, Laravel 12, Node.js, Express, Tailwind CSS, Vite</li>
+                    <li style="margin-bottom: 4pt;"><strong style="color: #1a1a1a;">Databases:</strong> MySQL, SQLite, MongoDB</li>
+                    <li style="margin-bottom: 4pt;"><strong style="color: #1a1a1a;">Machine Learning:</strong> Logistic Regression, K-Nearest Neighbors (KNN), scikit-learn, NLP concepts</li>
+                    <li style="margin-bottom: 4pt;"><strong style="color: #1a1a1a;">Tools & Deployment:</strong> Git, Vercel, Railway</li>
+                </ul>
             </div>
 
             <div class="skills-category">
