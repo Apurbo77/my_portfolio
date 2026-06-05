@@ -55,8 +55,8 @@
         <section id="hero" class="hero">
             <div class="hero-content">
                 <p class="greeting">Hi, I am</p>
-                <h1 class="glitch" data-text="Apurbo Kumar Bhaket">Apurbo Kumar Bhaket</h1>
-                <h2 class="subtitle">CSE Student at BRAC University</h2>
+                <h1 class="glitch" id="hero-name" data-text=""></h1>
+                <h2 class="subtitle" id="hero-subtitle"></h2>
                 <p class="description">A dedicated Computer Science student with a passion for creative problem-solving
                     and software development. I thrive on planning, executing, and bringing innovative digital ideas to
                     life.</p>
@@ -82,18 +82,16 @@
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Hello! I'm Apurbo Kumar Bhaket. I'm a creative worker, highly enthusiastic in planning and
-                        executing. I remain highly determined and honest in my goals and actions.</p>
-                    <p>I am currently pursuing a Bachelor of Science in Computer Science and Engineering at BRAC
-                        University, building a strong foundation in problem-solving and software development.</p>
+                    <p id="about-text-1"></p>
+                    <p id="about-text-2"></p>
                 </div>
                 <div class="stats">
                     <div class="stat-item">
-                        <span class="stat-number">81</span>
+                        <span class="stat-number" id="credits-completed"></span>
                         <span class="stat-label">Credits Completed</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">2027</span>
+                        <span class="stat-number" id="expected-graduation"></span>
                         <span class="stat-label">Expected Graduation</span>
                     </div>
                 </div>
@@ -109,33 +107,17 @@
                 <div class="skill-card">
                     <div class="skill-icon">💻</div>
                     <h3>Technical Skills</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag highlighted">Python</span>
-                        <span class="skill-tag highlighted">C Language</span>
-                        <span class="skill-tag highlighted">Laravel Framework</span>
-                        <span class="skill-tag">MS Word</span>
-                        <span class="skill-tag">PowerPoint</span>
-                    </div>
+                    <div class="skill-tags" id="technical-skills"></div>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon">🤝</div>
                     <h3>Experience & Soft Skills</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Robotics Club (HR)</span>
-                        <span class="skill-tag">Event Planning</span>
-                        <span class="skill-tag">Teamwork</span>
-                        <span class="skill-tag">Leadership</span>
-                        <span class="skill-tag">Communication</span>
-                    </div>
+                    <div class="skill-tags" id="soft-skills"></div>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon">🗣️</div>
                     <h3>Languages</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Bengali</span>
-                        <span class="skill-tag">English</span>
-                        <span class="skill-tag">Hindi</span>
-                    </div>
+                    <div class="skill-tags" id="languages"></div>
                 </div>
             </div>
         </section>
@@ -145,38 +127,7 @@
                 <h2>Education</h2>
                 <div class="line"></div>
             </div>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-info" style="padding-top: 2rem;">
-                        <div class="tech-stack" style="margin-bottom: 1rem;">
-                            <span>Expected 2027</span>
-                        </div>
-                        <h3>Bachelor of Science</h3>
-                        <p>Department of Computer Science and Engineering<br>Credits Completed: 81</p>
-                        <h4 style="margin-top: 1rem;"><a href="https://www.bracu.ac.bd/" target="_blank"
-                                rel="noopener noreferrer"
-                                style="color: var(--primary-color); text-decoration: none;">BRAC University</a></h4>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-info" style="padding-top: 2rem;">
-                        <div class="tech-stack" style="margin-bottom: 1rem;">
-                            <span>Passing Year: 2021</span>
-                        </div>
-                        <h3>Higher Secondary Certificate</h3>
-                        <p>Group: Science<br>Result: 5.00 out of 5.00<br>Board: Rajshahi</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-info" style="padding-top: 2rem;">
-                        <div class="tech-stack" style="margin-bottom: 1rem;">
-                            <span>Passing Year: 2019</span>
-                        </div>
-                        <h3>Secondary School Certificate</h3>
-                        <p>Group: Science<br>Result: 5.00 out of 5.00<br>Board: Rajshahi</p>
-                    </div>
-                </div>
-            </div>
+            <div class="project-grid" id="education-grid"></div>
         </section>
 
         <section id="contact" class="contact reveal">
@@ -189,16 +140,7 @@
                     <h3>Let's build something awesome together!</h3>
                     <p>I'm currently available for freelance work and open to new opportunities. Feel free to reach out
                         if you have a project in mind or just want to say hi.</p>
-                    <div class="social-links" style="flex-wrap: wrap;">
-                        <a href="mailto:apurbobhaket17@gmail.com" class="social-btn">Email Me</a>
-                        <a href="tel:+8801760202953" class="social-btn">📞 Phone</a>
-                        <a href="https://www.facebook.com/apurbo.bhaket.9/" target="_blank" rel="noopener noreferrer"
-                            class="social-btn">Facebook</a>
-                        <a href="https://github.com/Apurbo77" target="_blank" rel="noopener noreferrer"
-                            class="social-btn">GitHub</a>
-                        <span class="social-btn" style="cursor: default; border-color: transparent;">📍 Dhaka,
-                            Bangladesh</span>
-                    </div>
+                    <div class="social-links" style="flex-wrap: wrap;" id="social-links"></div>
                 </div>
                 <form class="contact-form" id="contact-form" novalidate>
                     <div class="input-group">
@@ -223,6 +165,7 @@
         <p>&copy; 2026 Apurbo. All rights reserved.</p>
     </footer>
 
+    <script src="data.js"></script>
     <script src="script.js" defer></script>
 </body>
 
