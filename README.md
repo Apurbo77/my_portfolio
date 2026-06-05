@@ -1,99 +1,16 @@
-# 🚀 Apurbo Kumar Bhaket — Personal Portfolio
+# React + Vite
 
-A modern, responsive personal portfolio website built with pure HTML, CSS, and JavaScript. Hosted on **GitHub Pages**.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-🔗 **Live Site:** [https://apurbo77.github.io/my_portfolio](https://apurbo77.github.io/my_portfolio)
+Currently, two official plugins are available:
 
----
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## 📸 Preview
+## React Compiler
 
-> A dark-themed, animated portfolio showcasing education, skills, and academic achievements.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
----
+## Expanding the ESLint configuration
 
-## 📁 Project Structure
-
-```
-my_portfolio/
-├── index.html          # Main portfolio page
-├── achievements.html   # Academic achievements & course grades
-├── style.css           # All styles (dark theme, animations, responsive)
-├── script.js           # Mobile nav, scroll reveal, contact form
-├── img1.jpg            # Profile photo
-├── .nojekyll           # Disables Jekyll on GitHub Pages
-└── README.md           # This file
-```
-
----
-
-## ✨ Features
-
-- **Dark glassmorphism design** with animated gradient blobs
-- **Circular profile image** with dual spinning arc border animation
-- **Scroll-reveal animations** on all sections
-- **Glitch effect** on hero heading
-- **Sticky navbar** with blur backdrop
-- **Mobile-responsive** with hamburger menu
-- **Academic Achievements page** with colour-coded grade cards
-- **Contact form** integrated with [FormSubmit](https://formsubmit.co)
-- **SEO optimised** — Open Graph, Twitter Card, meta description, `theme-color`
-- **GitHub Pages ready** — no build step, no dependencies
-
----
-
-## 🛠️ Tech Stack
-
-| Technology | Usage |
-|---|---|
-| HTML5 | Page structure & semantics |
-| CSS3 | Styling, animations, responsive layout |
-| JavaScript (ES6+) | Interactivity, scroll events, form handling |
-| Google Fonts | Outfit & Inter typefaces |
-| FormSubmit | Contact form backend |
-
----
-
-## 📄 Pages
-
-### `index.html` — Main Portfolio
-- **Hero** — Name, title, CTA buttons, animated circle profile image
-- **About Me** — Short bio and stats (credits, graduation year)
-- **Skills** — Technical, soft skills, and languages
-- **Education** — BSc CSE (BRAC University), HSC, SSC
-- **Contact** — Email form + social links
-
-### `achievements.html` — Academic Record
-- Summary stat cards (courses listed, A/A+ grades, credits)
-- Colour-coded course grade cards:
-
-| Code | Course | Grade |
-|---|---|---|
-| CSE110 | Programming Language I | A+ |
-| CSE111 | Programming Language II | A |
-| CSE220 | Data Structures | A− |
-| CSE221 | Algorithms | B+ |
-| CSE260 | Digital Logic Design | A |
-
----
-
-## 🚀 Deploying to GitHub Pages
-
-1. Push all files to your GitHub repository
-2. Go to **Settings → Pages**
-3. Under **Source**, select **Branch: main** and **Folder: / (root)**
-4. Click **Save** — your site will be live in ~30 seconds
-
-> The `.nojekyll` file ensures CSS and JS load correctly without Jekyll interference.
-
----
-
-## 📬 Contact
-
-- **Email:** apurbobhaket17@gmail.com
-- **GitHub:** [@Apurbo77](https://github.com/Apurbo77)
-- **Location:** Dhaka, Bangladesh
-
----
-
-© 2026 Apurbo Kumar Bhaket. All rights reserved.
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
