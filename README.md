@@ -17,6 +17,7 @@ A modern, responsive personal portfolio website built with pure HTML, CSS, and J
 ```
 my_portfolio/
 ├── index.html          # Main portfolio page
+├── project.html        # Featured projects and live project links
 ├── achievements.html   # Academic achievements & course grades
 ├── style.css           # All styles (dark theme, animations, responsive)
 ├── script.js           # Mobile nav, scroll reveal, contact form
@@ -62,6 +63,9 @@ my_portfolio/
 - **Skills** — Technical, soft skills, and languages
 - **Education** — BSc CSE (BRAC University), HSC, SSC
 - **Contact** — Email form + social links
+
+### `project.html` — Selected Projects
+- **SHREE** — a handcrafted artisanal jewelry website with a direct link to the live project
 
 ### `achievements.html` — Academic Record
 - Summary stat cards (courses listed, A/A+ grades, credits)

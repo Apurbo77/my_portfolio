@@ -117,6 +117,7 @@ if (mobileMenuBtn && navLinks) {
     mobileMenuBtn.addEventListener('click', () => {
         mobileMenuBtn.classList.toggle('active');
         navLinks.classList.toggle('active');
+        mobileMenuBtn.setAttribute('aria-expanded', navLinks.classList.contains('active'));
 
         // Prevent scrolling when menu is open
         document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
@@ -127,6 +128,7 @@ if (mobileMenuBtn && navLinks) {
         link.addEventListener('click', () => {
             mobileMenuBtn.classList.remove('active');
             navLinks.classList.remove('active');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = 'auto';
         });
     });
