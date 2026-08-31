@@ -114,6 +114,13 @@ const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const navLinks = document.querySelector('.nav-links');
 
 if (mobileMenuBtn && navLinks) {
+    const closeMobileMenu = () => {
+        mobileMenuBtn.classList.remove('active');
+        navLinks.classList.remove('active');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = 'auto';
+    };
+
     mobileMenuBtn.addEventListener('click', () => {
         mobileMenuBtn.classList.toggle('active');
         navLinks.classList.toggle('active');
@@ -125,27 +132,29 @@ if (mobileMenuBtn && navLinks) {
 
     // Close mobile menu when a link is clicked
     document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenuBtn.classList.remove('active');
-            navLinks.classList.remove('active');
-            mobileMenuBtn.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = 'auto';
-        });
+        link.addEventListener('click', closeMobileMenu);
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && navLinks.classList.contains('active')) {
+            closeMobileMenu();
+            mobileMenuBtn.focus();
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && navLinks.classList.contains('active')) closeMobileMenu();
     });
 }
 
 // Sticky Navbar Background
 const navbar = document.querySelector('.navbar');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(5, 5, 5, 0.8)';
-        navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.1)';
-    } else {
-        navbar.style.background = 'rgba(5, 5, 5, 0.6)';
-        navbar.style.boxShadow = 'none';
-    }
-});
+if (navbar) {
+    const updateNavbar = () => navbar.classList.toggle('scrolled', window.scrollY > 24);
+    window.addEventListener('scroll', updateNavbar, { passive: true });
+    updateNavbar();
+}
 
 // Reveal Animation on Scroll
 function reveal() {

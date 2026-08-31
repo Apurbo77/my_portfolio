@@ -22,6 +22,7 @@ my_portfolio/
 ├── style.css           # All styles (dark theme, animations, responsive)
 ├── script.js           # Mobile nav, scroll reveal, contact form
 ├── img1.jpg            # Profile photo
+├── og.png              # Branded social sharing preview
 ├── .nojekyll           # Disables Jekyll on GitHub Pages
 └── README.md           # This file
 ```
@@ -30,12 +31,11 @@ my_portfolio/
 
 ## ✨ Features
 
-- **Dark glassmorphism design** with animated gradient blobs
-- **Circular profile image** with dual spinning arc border animation
+- **Midnight editorial design** with a restrained violet and mint accent system
+- **Portrait-led hero** with clear availability and professional details
+- **Featured project spotlight** for SHREE on the homepage
 - **Scroll-reveal animations** on all sections
-- **Glitch effect** on hero heading
-- **Sticky navbar** with blur backdrop
-- **Mobile-responsive** with hamburger menu
+- **Floating navigation** with a responsive, keyboard-accessible mobile menu
 - **Academic Achievements page** with colour-coded grade cards
 - **Contact form** integrated with [FormSubmit](https://formsubmit.co)
 - **SEO optimised** — Open Graph, Twitter Card, meta description, `theme-color`
