@@ -3,9 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="Apurbo Kumar Bhaket — Curriculum Vitae. CSE Student at BRAC University.">
     <meta name="author" content="Apurbo Kumar Bhaket">
+    <meta name="theme-color" content="#080b12">
     <meta property="og:title" content="CV | Apurbo Kumar Bhaket">
     <meta property="og:description" content="Curriculum vitae of Apurbo Kumar Bhaket, a CSE student at BRAC University.">
     <meta property="og:type" content="website">
@@ -16,13 +17,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Latin+Modern+Roman:wght@400;700&family=Source+Serif+4:wght@300;400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Latin+Modern+Roman:wght@400;700&family=Source+Serif+4:wght@300;400;600;700&family=Outfit:wght@500;600;700&display=swap"
         rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :root {
+            --safe-top: env(safe-area-inset-top, 0px);
+            --safe-bottom: env(safe-area-inset-bottom, 0px);
+            --safe-left: env(safe-area-inset-left, 0px);
+            --safe-right: env(safe-area-inset-right, 0px);
         }
 
         body {
@@ -34,16 +43,66 @@
             line-height: 1.6;
             font-size: 11pt;
             min-height: 100vh;
+            padding: calc(1rem + var(--safe-top)) var(--safe-right) calc(2rem + var(--safe-bottom)) var(--safe-left);
         }
 
+        /* Top Action Bar */
+        .action-bar {
+            max-width: 7.5in;
+            margin: 0.5rem auto 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            padding: 0 0.5rem;
+        }
+
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            min-height: 42px;
+            padding: 8px 16px;
+            background: rgba(16, 22, 32, 0.9);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transition: all 0.2s ease;
+        }
+
+        .action-btn:hover {
+            color: #080b12;
+            background: #67e8c2;
+            border-color: #67e8c2;
+            transform: translateY(-2px);
+        }
+
+        .action-btn:active {
+            transform: scale(0.96);
+        }
+
+        .action-btn svg {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+        /* Main Document Container */
         .cv-container {
             max-width: 7.5in;
-            margin: 2rem auto;
+            margin: 0 auto;
             padding: 0.6in 0.75in;
             background-color: #ffffff;
             color: #1a1a1a;
             border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 14pt;
+            border-radius: 16px;
             box-shadow: 0 32px 90px rgba(0, 0, 0, 0.42);
         }
 
@@ -59,22 +118,22 @@
             font-size: 22pt;
             font-weight: 700;
             letter-spacing: 0.5pt;
-            margin-bottom: 2pt;
+            margin-bottom: 3pt;
             color: #1a1a1a;
         }
 
         .cv-header .subtitle {
             font-size: 11pt;
-            color: #333;
-            margin-bottom: 6pt;
+            color: #444;
+            margin-bottom: 8pt;
             font-weight: 400;
         }
 
         .contact-bar {
             display: flex;
             justify-content: center;
-            flex-wrap: nowrap;
-            gap: 0.15in;
+            flex-wrap: wrap;
+            gap: 0.4rem 0.8rem;
             font-size: 9.5pt;
         }
 
@@ -82,7 +141,8 @@
         .contact-bar span {
             color: #333;
             text-decoration: none;
-            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
         }
 
         .contact-bar a:hover {
@@ -91,50 +151,7 @@
         }
 
         .contact-bar .separator {
-            color: #999;
-        }
-
-        /* Buttons */
-        .print-btn,
-        .back-btn {
-            position: fixed;
-            top: 20px;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 8pt 16pt;
-            background: rgba(16, 22, 32, 0.94);
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 10pt;
-            font-family: 'Source Serif 4', serif;
-            font-size: 9.5pt;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-            z-index: 100;
-            text-decoration: none;
-        }
-
-        .print-btn {
-            right: 20px;
-        }
-
-        .back-btn {
-            left: 20px;
-        }
-
-        .print-btn:hover,
-        .back-btn:hover {
-            color: #080b12;
-            background: #67e8c2;
-            border-color: #67e8c2;
-        }
-
-        .print-btn svg,
-        .back-btn svg {
-            width: 14px;
-            height: 14px;
+            color: #aaa;
         }
 
         /* Sections */
@@ -163,6 +180,7 @@
             justify-content: space-between;
             align-items: baseline;
             flex-wrap: wrap;
+            gap: 4px;
             margin-bottom: 2pt;
         }
 
@@ -188,6 +206,7 @@
         .entry-description {
             font-size: 10pt;
             color: #333;
+            line-height: 1.55;
         }
 
         /* Skills */
@@ -211,7 +230,7 @@
         .skill-tag {
             padding: 2pt 8pt;
             border: 0.5pt solid #999;
-            border-radius: 2pt;
+            border-radius: 4px;
             font-size: 9.5pt;
             color: #333;
         }
@@ -255,10 +274,10 @@
         @media print {
             body {
                 background: white;
+                padding: 0;
             }
 
-            .print-btn,
-            .back-btn {
+            .action-bar {
                 display: none !important;
             }
 
@@ -273,30 +292,43 @@
             }
         }
 
-        /* Responsive */
+        /* Responsive Mobile Styles */
         @media (max-width: 600px) {
             body {
-                padding-top: 0.5rem;
+                padding: calc(0.5rem + var(--safe-top)) 0.5rem calc(1.5rem + var(--safe-bottom)) 0.5rem;
+            }
+
+            .action-bar {
+                margin: 0.2rem auto 0.8rem;
+                padding: 0;
+            }
+
+            .action-btn {
+                flex: 1;
+                justify-content: center;
+                font-size: 0.82rem;
+                min-height: 44px;
+                padding: 6px 10px;
             }
 
             .cv-container {
-                margin: 0.5rem;
+                margin: 0;
                 padding: 1.2rem 1rem;
-                border-radius: 6px;
+                border-radius: 12px;
             }
 
             .cv-header h1 {
-                font-size: 1.5rem;
+                font-size: 1.45rem;
             }
             
             .cv-header .subtitle {
-                font-size: 1rem;
+                font-size: 0.95rem;
             }
 
             .contact-bar {
                 flex-direction: column;
                 align-items: center;
-                gap: 5px;
+                gap: 4px;
             }
 
             .contact-bar .separator {
@@ -306,44 +338,36 @@
             .entry-header {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 3px;
+                gap: 2px;
             }
 
-            .print-btn,
-            .back-btn {
-                position: static;
-                display: flex;
-                justify-content: center;
-                margin: 0.5rem auto;
-                width: calc(100% - 1rem);
-            }
-            
             ul {
-                margin-left: 1rem !important;
+                margin-left: 1.1rem !important;
             }
         }
     </style>
 </head>
 
 <body>
-    <!-- Back to Portfolio Button (fixed, outside CV) -->
-    <a href="index.html" class="back-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-            stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-        </svg>
-        Back to Portfolio
-    </a>
+    <!-- Top Action Bar -->
+    <div class="action-bar">
+        <a href="index.html" class="action-btn back-btn" aria-label="Return to portfolio home">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Back to Portfolio
+        </a>
 
-    <!-- Print Button (fixed, outside CV) -->
-    <button class="print-btn" onclick="window.print()">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-            stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round"
-                d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
-        </svg>
-        Print / Save as PDF
-    </button>
+        <button class="action-btn print-btn" onclick="window.print()" aria-label="Print CV or save as PDF">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+            </svg>
+            Print / PDF
+        </button>
+    </div>
 
     <div class="cv-container">
         <!-- Header -->
@@ -357,7 +381,7 @@
                 <span class="separator">|</span>
                 <span>Dhaka, Bangladesh</span>
                 <span class="separator">|</span>
-                <a href="https://github.com/Apurbo77" target="_blank">github.com/Apurbo77</a>
+                <a href="https://github.com/Apurbo77" target="_blank" rel="noopener noreferrer">github.com/Apurbo77</a>
             </div>
         </header>
 
@@ -383,7 +407,7 @@
                     <span class="entry-date">Expected 2027</span>
                 </div>
                 <p class="entry-subtitle">BRAC University — Department of Computer Science and Engineering</p>
-                <p class="entry-description">Credits Completed: 81 | Focus on software development and problem-solving.
+                <p class="entry-description">Credits Completed: 93 | Focus on software development and problem-solving.
                 </p>
             </div>
 

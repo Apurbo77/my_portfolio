@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="Apurbo Kumar Bhaket — Academic achievements and course proficiency in CSE at BRAC University.">
     <meta name="author" content="Apurbo Kumar Bhaket">
-    <meta name="theme-color" content="#050505">
+    <meta name="theme-color" content="#080b12">
     <!-- Open Graph -->
     <meta property="og:title" content="Apurbo | Academic Achievements">
     <meta property="og:description" content="CSE course grades and academic performance at BRAC University.">
@@ -22,22 +22,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style"
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500&display=swap">
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600&display=swap">
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
         /* ── Achievements Page Specific ── */
         .achievements-hero {
-            min-height: 540px;
+            min-height: 480px;
             margin-top: 84px;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             justify-content: center;
             text-align: left;
-            padding: 100px 0 60px;
+            padding: 80px 0 40px;
         }
 
         .achievements-hero .page-tag {
@@ -49,7 +49,6 @@
             color: var(--primary-color);
             background: transparent;
             border: 0;
-            border-radius: 0;
             font-size: 0.75rem;
             font-weight: 700;
             letter-spacing: 0.14em;
@@ -66,7 +65,7 @@
         .achievements-hero h1 {
             max-width: 900px;
             font-family: var(--font-heading);
-            font-size: clamp(3rem, 8vw, 6.2rem);
+            font-size: clamp(2.6rem, 7vw, 5.6rem);
             font-weight: 800;
             line-height: 0.96;
             letter-spacing: -0.065em;
@@ -83,25 +82,25 @@
             max-width: 650px;
         }
 
-        /* GPA Summary bar */
+        /* GPA Summary */
         .gpa-summary {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 1rem;
+            gap: 1.25rem;
             margin: 0 0 2rem;
         }
 
         .gpa-card {
-            background: var(--surface-color);
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
             border: 1px solid var(--surface-border);
-            min-height: 180px;
+            min-height: 170px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             border-radius: var(--radius-md);
             padding: 1.8rem 2rem;
             text-align: left;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            transition: transform 0.25s ease, border-color 0.25s ease;
         }
 
         .gpa-card:hover {
@@ -111,7 +110,7 @@
 
         .gpa-card .gpa-value {
             font-family: var(--font-heading);
-            font-size: clamp(3rem, 6vw, 4.6rem);
+            font-size: clamp(2.8rem, 5vw, 4.4rem);
             font-weight: 800;
             line-height: 1;
             letter-spacing: -0.06em;
@@ -125,31 +124,31 @@
             color: var(--text-muted);
             font-size: 0.85rem;
             font-weight: 500;
-            margin-top: 0.3rem;
+            margin-top: 0.4rem;
             display: block;
         }
 
         /* Course grid */
         .courses-section {
-            padding: 7rem 0;
+            padding: 5rem 0;
         }
 
         .courses-grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 1rem;
+            gap: 1.25rem;
         }
 
         .course-card {
-            background: var(--surface-color);
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.02));
             border: 1px solid var(--surface-border);
-            min-height: 144px;
+            min-height: 130px;
             border-radius: var(--radius-md);
-            padding: 1.6rem;
+            padding: 1.5rem;
             display: flex;
             align-items: center;
-            gap: 1.5rem;
-            transition: all 0.35s ease;
+            gap: 1.25rem;
+            transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
             position: relative;
             overflow: hidden;
         }
@@ -168,7 +167,7 @@
         }
 
         .course-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
             border-color: rgba(139, 140, 248, 0.42);
             background: rgba(255, 255, 255, 0.04);
         }
@@ -181,11 +180,11 @@
             font-family: var(--font-heading);
             font-size: 0.78rem;
             font-weight: 700;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             color: var(--primary-color);
             background: rgba(99, 102, 241, 0.1);
             border: 1px solid rgba(99, 102, 241, 0.25);
-            padding: 0.35rem 0.8rem;
+            padding: 0.35rem 0.75rem;
             border-radius: 8px;
             white-space: nowrap;
             flex-shrink: 0;
@@ -193,6 +192,7 @@
 
         .course-info {
             flex: 1;
+            min-width: 0;
         }
 
         .course-name {
@@ -201,20 +201,22 @@
             font-weight: 600;
             color: var(--text-main);
             margin-bottom: 0.2rem;
+            line-height: 1.3;
         }
 
         .course-subtitle {
             color: var(--text-muted);
-            font-size: 0.85rem;
+            font-size: 0.84rem;
+            line-height: 1.4;
         }
 
         .grade-badge {
             font-family: var(--font-heading);
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 800;
-            min-width: 56px;
+            min-width: 52px;
             text-align: center;
-            padding: 0.4rem 0.8rem;
+            padding: 0.35rem 0.75rem;
             border-radius: 12px;
             flex-shrink: 0;
         }
@@ -226,35 +228,64 @@
         .grade-bp  { color: #f59e0b; background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.3); }
         .grade-b   { color: #fb923c; background: rgba(251,146,60,0.12); border: 1px solid rgba(251,146,60,0.3); }
 
-        /* Back button */
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            margin-bottom: 2rem;
-            transition: color 0.3s ease, gap 0.3s ease;
-        }
+        /* Mobile specific adjustments */
+        @media (max-width: 768px) {
+            .achievements-hero {
+                min-height: auto;
+                margin-top: 56px;
+                padding: 2rem 0 2rem;
+            }
 
-        .back-btn:hover {
-            color: var(--primary-color);
-            gap: 0.8rem;
-        }
+            .achievements-hero h1 {
+                font-size: clamp(2.2rem, 10vw, 3.6rem);
+            }
 
-        @media (max-width: 600px) {
+            .achievements-hero p {
+                font-size: 0.98rem;
+            }
+
             .courses-grid {
                 grid-template-columns: 1fr;
             }
+
+            .courses-section {
+                padding: 3.5rem 0;
+            }
+        }
+
+        @media (max-width: 520px) {
             .gpa-summary {
                 grid-template-columns: 1fr;
+                gap: 0.85rem;
             }
-            .achievements-hero {
-                min-height: auto;
-                margin-top: 66px;
-                padding: 7rem 0 4rem;
+
+            .gpa-card {
+                padding: 1.4rem;
+                min-height: 130px;
+            }
+
+            .course-card {
+                padding: 1.2rem;
+                gap: 0.85rem;
+            }
+
+            .course-name {
+                font-size: 0.96rem;
+            }
+
+            .course-subtitle {
+                font-size: 0.78rem;
+            }
+
+            .course-code {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.72rem;
+            }
+
+            .grade-badge {
+                font-size: 1.1rem;
+                min-width: 44px;
+                padding: 0.3rem 0.5rem;
             }
         }
     </style>
@@ -262,6 +293,7 @@
 
 <body>
     <div class="blob-bg"></div>
+    <div class="nav-backdrop" aria-hidden="true"></div>
 
     <nav class="navbar" aria-label="Main navigation">
         <div class="nav-container">
@@ -295,7 +327,7 @@
         <div class="gpa-summary">
             <div class="gpa-card">
                 <span class="gpa-value" id="cgpa-value"></span>
-                <span class="gpa-label">CGPA</span>
+                <span class="gpa-label">Cumulative GPA (CGPA)</span>
             </div>
             <div class="gpa-card">
                 <span class="gpa-value" id="credits-value"></span>

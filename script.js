@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-// Populate Dynamic Data from data.js
+// 1. Populate Dynamic Data from data.js
 if (typeof portfolioData !== 'undefined') {
     const data = portfolioData;
 
@@ -64,17 +64,6 @@ if (typeof portfolioData !== 'undefined') {
                                     style="color: var(--primary-color); text-decoration: none;">${edu.university}</a></h4>
                         </div>
                     </div>`;
-            } else if (edu.degree === 'Higher Secondary Certificate') {
-                return `
-                    <div class="project-card">
-                        <div class="project-info" style="padding-top: 2rem;">
-                            <div class="tech-stack" style="margin-bottom: 1rem;">
-                                <span>Passing Year: ${edu.passingYear}</span>
-                            </div>
-                            <h3>${edu.degree}</h3>
-                            <p>Group: ${edu.group}<br>Result: ${edu.result}<br>Board: ${edu.board}</p>
-                        </div>
-                    </div>`;
             } else {
                 return `
                     <div class="project-card">
@@ -109,32 +98,58 @@ if (typeof portfolioData !== 'undefined') {
     if (creditsValueEl) creditsValueEl.textContent = data.creditsCompleted;
 }
 
-// Mobile Navigation Toggle
+// 2. Mobile Navigation Toggle & Outside Tap Dismiss
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const navLinks = document.querySelector('.nav-links');
+const navBackdrop = document.querySelector('.nav-backdrop');
 
 if (mobileMenuBtn && navLinks) {
+    const openMobileMenu = () => {
+        mobileMenuBtn.classList.add('active');
+        navLinks.classList.add('active');
+        if (navBackdrop) navBackdrop.classList.add('active');
+        mobileMenuBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+    };
+
     const closeMobileMenu = () => {
         mobileMenuBtn.classList.remove('active');
         navLinks.classList.remove('active');
+        if (navBackdrop) navBackdrop.classList.remove('active');
         mobileMenuBtn.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = 'auto';
+        document.body.style.overflow = '';
     };
 
-    mobileMenuBtn.addEventListener('click', () => {
-        mobileMenuBtn.classList.toggle('active');
-        navLinks.classList.toggle('active');
-        mobileMenuBtn.setAttribute('aria-expanded', navLinks.classList.contains('active'));
-
-        // Prevent scrolling when menu is open
-        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
+    mobileMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = navLinks.classList.contains('active');
+        if (isOpen) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
     });
 
-    // Close mobile menu when a link is clicked
+    // Close when tapping backdrop
+    if (navBackdrop) {
+        navBackdrop.addEventListener('click', closeMobileMenu);
+    }
+
+    // Close when clicking outside on mobile
+    document.addEventListener('click', (event) => {
+        if (navLinks.classList.contains('active') &&
+            !navLinks.contains(event.target) &&
+            !mobileMenuBtn.contains(event.target)) {
+            closeMobileMenu();
+        }
+    });
+
+    // Close mobile menu when a nav link is clicked
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', closeMobileMenu);
     });
 
+    // Close on Escape key
     document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape' && navLinks.classList.contains('active')) {
             closeMobileMenu();
@@ -142,40 +157,51 @@ if (mobileMenuBtn && navLinks) {
         }
     });
 
+    // Reset when resizing above mobile breakpoint
     window.addEventListener('resize', () => {
-        if (window.innerWidth > 768 && navLinks.classList.contains('active')) closeMobileMenu();
+        if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+            closeMobileMenu();
+        }
     });
 }
 
-// Sticky Navbar Background
+// 3. Sticky Navbar Blur State
 const navbar = document.querySelector('.navbar');
-
 if (navbar) {
-    const updateNavbar = () => navbar.classList.toggle('scrolled', window.scrollY > 24);
-    window.addEventListener('scroll', updateNavbar, { passive: true });
+    let ticking = false;
+    const updateNavbar = () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 20);
+        ticking = false;
+    };
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(updateNavbar);
+            ticking = true;
+        }
+    }, { passive: true });
     updateNavbar();
 }
 
-// Reveal Animation on Scroll
+// 4. Reveal Animation on Scroll (Mobile-Optimized Threshold)
 function reveal() {
-    var reveals = document.querySelectorAll('.reveal');
+    const reveals = document.querySelectorAll('.reveal');
+    const windowHeight = window.innerHeight;
+    const isMobile = window.innerWidth <= 768;
+    const elementVisible = isMobile ? 60 : 120;
 
-    for (var i = 0; i < reveals.length; i++) {
-        var windowHeight = window.innerHeight;
-        var elementTop = reveals[i].getBoundingClientRect().top;
-        var elementVisible = 150;
-
+    for (let i = 0; i < reveals.length; i++) {
+        const elementTop = reveals[i].getBoundingClientRect().top;
         if (elementTop < windowHeight - elementVisible) {
             reveals[i].classList.add('active');
         }
     }
 }
 
-window.addEventListener('scroll', reveal);
-// Trigger once on load
+window.addEventListener('scroll', reveal, { passive: true });
+// Initial trigger
 reveal();
 
-// Form submission handler
+// 5. Contact Form submission handler
 const contactForm = document.querySelector('#contact-form, .contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
@@ -184,7 +210,8 @@ if (contactForm) {
         const originalText = submitBtn.innerText;
 
         submitBtn.innerText = 'Sending...';
-        submitBtn.style.opacity = '0.7';
+        submitBtn.style.opacity = '0.75';
+        submitBtn.disabled = true;
 
         const formData = new FormData(this);
 
@@ -196,27 +223,29 @@ if (contactForm) {
             }
         })
             .then(response => response.json())
-            .then(data => {
-                submitBtn.innerText = 'Message Sent!';
+            .then(() => {
+                submitBtn.innerText = '✓ Message Sent!';
                 submitBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
                 submitBtn.style.opacity = '1';
+                submitBtn.disabled = false;
                 this.reset();
 
                 setTimeout(() => {
                     submitBtn.innerText = originalText;
                     submitBtn.style.background = '';
-                }, 3000);
+                }, 3500);
             })
             .catch(error => {
-                console.error(error);
+                console.error('Contact form submission error:', error);
                 submitBtn.innerText = 'Error! Try Again.';
                 submitBtn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
                 submitBtn.style.opacity = '1';
+                submitBtn.disabled = false;
 
                 setTimeout(() => {
                     submitBtn.innerText = originalText;
                     submitBtn.style.background = '';
-                }, 3000);
+                }, 3500);
             });
     });
 }
